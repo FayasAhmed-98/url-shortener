@@ -28,7 +28,7 @@ Below is a detailed description of the components, scalability strategy, fault t
 - The client interacts with the service through RESTful API endpoints. This can be a web interface, mobile application, or any other API consumer.
 
 2. API Server (Express.js)
-- **Role**: Acts as the primary gateway for handling HTTP requests. It provides endpoints for:
+- **Role**:  Node.js with Express.js handles HTTP requests and serves API endpoints. It provides endpoints for:
 - Shortening a long URL (`POST /shorten`).
 - Redirecting a shortened URL to its original long URL (`GET /:short_url`).
 - **Why Express.js?**: It is lightweight, efficient, and well-suited for building REST APIs.
