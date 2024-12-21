@@ -50,6 +50,7 @@ Below is a detailed description of the components, scalability strategy, fault t
 5. Load Balancer
 - **Role**: Distributes incoming traffic evenly across multiple API server instances to ensure high availability and fault tolerance.
 - **Why?**: Prevents any single server from becoming a bottleneck and enables horizontal scaling.
+- **Current Setup**: Since the service is being developed locally, a load balancer is not currently implemented. However, it is a future consideration for scaling the service in production environments.
 
 ### Scalability
 ##### Horizontal Scaling
@@ -61,7 +62,6 @@ Below is a detailed description of the components, scalability strategy, fault t
 ### Fault Tolerance
 - **Caching** - Cached results (via Node-Cache) prevent database overload during high-traffic periods. However, since Node-Cache is not persistent, the cache is rebuilt if the server restarts.
 - **Database Replication** - MongoDB’s replica sets ensure high availability and fault tolerance. If the primary database server fails, one of the replicas automatically takes over.
-- **Load Balancer** - The load balancer reroutes traffic to healthy API server instances if one becomes unavailable.
 
 ### Data Consistency
 - **URL Uniqueness** - The service ensures that each shortened URL is unique by checking for existing `short_url` values in the database before creating a new one.
