@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "A scalable and efficient URL Shortening Service built with Node.js and MongoDB. This service allows users to shorten long URLs into unique short URLs and redirect from short URLs to the original URLs. It features a RESTful API for URL creation and redirection, input validation, and basic error handling.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.2",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0"
+  }
+}
