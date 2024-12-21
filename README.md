@@ -1,5 +1,5 @@
 # url-shortener
-A scalable and efficient URL Shortening Service built with Node.js and MongoDB. This service allows users to shorten long URLs into unique short URLs and redirect from short URLs to the original URLs. It features a RESTful API for URL creation and redirection, input validation, and basic error handling. 
+A scalable and efficient URL Shortening Service built with Node.js, Express.js, and MongoDB. This service allows users to shorten long URLs into unique short URLs and redirect from short URLs to the original URLs. It features a RESTful API for URL creation and redirection, input validation, caching for improved performance, and basic error handling.
 
 
 ## Features
@@ -107,7 +107,7 @@ Set up environment variables: Create a .env file in the project root and add the
 Start the application
 
 ```bash
-  npm start
+   node index.js
 ```
 
 ## URL Shortener API Documentation
