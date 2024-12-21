@@ -24,16 +24,16 @@ Below is a detailed description of the components, scalability strategy, fault t
 
 
 ## Components
-1. Client
+1. ***Client***
 - The client interacts with the service through RESTful API endpoints. This can be a web interface, mobile application, or any other API consumer.
 
-2. API Server (Express.js)
+2. ***API Server*** 
 - **Role**:  Node.js with Express.js handles HTTP requests and serves API endpoints. It provides endpoints for:
 - Shortening a long URL (`POST /shorten`).
 - Redirecting a shortened URL to its original long URL (`GET /:short_url`).
 - **Why Express.js?**: It is lightweight, efficient, and well-suited for building REST APIs.
 
-3. Database (MongoDB)
+3. ***Database (MongoDB)***
 - **Role**: Stores original URLs, their corresponding shortened URLs, and metadata such as creation and expiration timestamps.
 - **Why MongoDB?**: Its schema flexibility and indexing capabilities allow for fast lookups and easy scalability as the dataset grows.
 - **Schema Design**
@@ -42,12 +42,12 @@ Below is a detailed description of the components, scalability strategy, fault t
 - `created_at`: Timestamp when the entry was created.
 - `expires_at (optional)`: Optional expiration timestamp.
 
-4. Caching Layer (Node-Cache)
+4. ***Caching Layer (Node-Cache)***
 - **Role**: Provides in-memory caching of frequently accessed URLs to reduce database load and improve response times.
 - **Why Node-Cache?**: It’s simple to integrate and improves performance for frequently requested URLs.
 - **Future Considerations**: For distributed environments, replacing Node-Cache with Redis or Memcached would be necessary.
 
-5. Load Balancer
+5. ***Load Balancer***
 - **Role**: Distributes incoming traffic evenly across multiple API server instances to ensure high availability and fault tolerance.
 - **Why?**: Prevents any single server from becoming a bottleneck and enables horizontal scaling.
 - **Current Setup**: Since the service is being developed locally, a load balancer is not currently implemented. However, it is a future consideration for scaling the service in production environments.
